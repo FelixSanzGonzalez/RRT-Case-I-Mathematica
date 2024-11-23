@@ -1,0 +1,211 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      8618,        203]
+NotebookOptionsPosition[      6988,        165]
+NotebookOutlinePosition[      7690,        188]
+CellTagsIndexPosition[      7647,        185]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Ejercicio I.2: Representaci\[OAcute]n gr\[AAcute]fica de una red
+\
+\>", "Title",
+ CellChangeTimes->{
+  3.5964594288718452`*^9, {3.841548741571953*^9, 3.841548747225072*^9}, {
+   3.841548796186611*^9, 
+   3.8415488070400333`*^9}},ExpressionUUID->"e3ee497e-0b75-4ac7-a42f-\
+e714942a1eb2"],
+
+Cell["\<\
+Nombre del Alumno:  Felix Sanz Gonzalez
+DNI: 78997168B\
+\>", "Subtitle",
+ CellChangeTimes->{{3.5965178049747844`*^9, 3.5965178117565556`*^9}, {
+  3.596517867929186*^9, 3.596517901929186*^9}, {3.785162408147558*^9, 
+  3.785162412412449*^9}, {3.937906514889471*^9, 
+  3.9379065277177086`*^9}},ExpressionUUID->"013a3fe3-928c-499a-9432-\
+bfa9b1009ca6"],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.841548835434836*^9, 
+  3.841548860669359*^9}},ExpressionUUID->"d8101ffd-01fd-42bb-9d88-\
+dcf4ef61775e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1.- Construir grafo de una cola SIMPLE", "Title",
+ CellChangeTimes->{{3.5964608173739247`*^9, 3.5964608209364023`*^9}, {
+   3.6276689555281057`*^9, 3.627668956274926*^9}, {3.655746670268469*^9, 
+   3.6557466777385836`*^9}, {3.6760015558650703`*^9, 3.676001557163062*^9}, {
+   3.676006294125436*^9, 3.676006295585473*^9}, {3.7536416635217237`*^9, 
+   3.753641663911347*^9}, {3.754925516477665*^9, 3.754925521197358*^9}, {
+   3.754927128587829*^9, 3.754927129362215*^9}, {3.78505431130344*^9, 
+   3.785054311934387*^9}, {3.7850954410519114`*^9, 3.785095441459798*^9}, 
+   3.7850959572196007`*^9, {3.7851623831036*^9, 3.785162393009046*^9}, 
+   3.841548866553829*^9, 3.841548936463047*^9, {3.841548975801352*^9, 
+   3.841549033227416*^9}, 3.8415492047897997`*^9, {3.8415492507305717`*^9, 
+   3.841549278889674*^9}, 
+   3.841549335281642*^9},ExpressionUUID->"ee25f69a-cf28-4679-bfce-\
+a586ff97fa07"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetAttributes", "[", 
+   RowBox[{"createPrimitive", ",", "HoldAll"}], "]"}], 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"createPrimitive", "[", 
+   RowBox[{"patt_", ",", "expr_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Typeset`MakeBoxes", "[", 
+    RowBox[{
+     RowBox[{"p", ":", "patt"}], ",", "fmt_", ",", "Graphics"}], "]"}], ":=", 
+   RowBox[{"Typeset`MakeBoxes", "[", 
+    RowBox[{
+     RowBox[{"Interpretation", "[", 
+      RowBox[{"expr", ",", "p"}], "]"}], ",", "fmt", ",", "Graphics"}], 
+    "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.782228222137713*^9, 3.7822282239469852`*^9}, 
+   3.841549290334587*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"d90909e6-1c5c-4854-9551-39f50c2a804e"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.782228264660386*^9, 3.782228264661662*^9}, 
+   3.7822302172341433`*^9, {3.782230306332979*^9, 3.7822303795580893`*^9}, {
+   3.7822304658356323`*^9, 3.7822306037702723`*^9}, {3.78223063811869*^9, 
+   3.782230654695191*^9}, {3.782230785418378*^9, 3.782230789758218*^9}, {
+   3.782230839669929*^9, 3.782230931331493*^9}, {3.78230178154021*^9, 
+   3.782301782311326*^9}, 
+   3.8419401904198227`*^9},ExpressionUUID->"97e5fc6f-2d9d-4066-91af-\
+09813e171f5d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.- Construir una topolog\[IAcute]a gr\[AAcute]fica de red", "Title",
+ CellChangeTimes->{{3.5964608173739247`*^9, 3.5964608209364023`*^9}, {
+   3.6276689555281057`*^9, 3.627668956274926*^9}, {3.655746670268469*^9, 
+   3.6557466777385836`*^9}, {3.6760015558650703`*^9, 3.676001557163062*^9}, {
+   3.676006294125436*^9, 3.676006295585473*^9}, {3.7536416635217237`*^9, 
+   3.753641663911347*^9}, {3.754925516477665*^9, 3.754925521197358*^9}, {
+   3.754927128587829*^9, 3.754927129362215*^9}, {3.78505431130344*^9, 
+   3.785054311934387*^9}, {3.7850954410519114`*^9, 3.785095441459798*^9}, 
+   3.7850959572196007`*^9, {3.7851623831036*^9, 3.785162393009046*^9}, 
+   3.841548866553829*^9, 3.841548936463047*^9, {3.841548975801352*^9, 
+   3.841549033227416*^9}, 3.8415492047897997`*^9, {3.8415492507305717`*^9, 
+   3.841549278889674*^9}, 3.841549335281642*^9, {3.8415494389301357`*^9, 
+   3.84154944022966*^9}, {3.8415494715598173`*^9, 
+   3.841549482058234*^9}},ExpressionUUID->"0b01d1cf-2784-4b4b-bce3-\
+c22b7819618b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GraphPlot", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.782232327182074*^9, 3.782232361013831*^9}, {
+   3.782232479157427*^9, 3.782232511039679*^9}, {3.782232547127178*^9, 
+   3.782232557560563*^9}, {3.7822325907050734`*^9, 3.782232634747336*^9}, {
+   3.782232671291246*^9, 3.78223267697866*^9}, {3.782232732502387*^9, 
+   3.7822327581588078`*^9}, 
+   3.8419402503165703`*^9},ExpressionUUID->"220876c1-7c6c-4f7d-8e0e-\
+63456060d3fe"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "GraphPlot", "argx", 
+   "\"\\!\\(\\*RowBox[{\\\"GraphPlot\\\"}]\\) called with \\!\\(\\*RowBox[{\\\
+\"4\\\"}]\\) arguments; 1 argument is expected.\"", 2, 911, 408, 
+   32272577727461755613, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.782232759784264*^9, 3.782284623746213*^9, 
+  3.7824184358262777`*^9, 3.7824208901566467`*^9, 3.7824210304233427`*^9, 
+  3.782452100540505*^9, 3.782470431006969*^9, 3.7824740816925793`*^9, 
+  3.782474945333953*^9, 3.7824757632382307`*^9, 3.782475859422571*^9, 
+  3.78247598304932*^9, 3.782477505174992*^9, 
+  3.7824887790101767`*^9},ExpressionUUID->"bba5ac75-8083-4a66-b3f2-\
+9cc94b5959b3"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+3.- Adaptar la topolog\[IAcute]a de red f\[IAcute]sica a una red de colas \
+equivalente\
+\>", "Title",
+ CellChangeTimes->{{3.5964608173739247`*^9, 3.5964608209364023`*^9}, {
+   3.6276689555281057`*^9, 3.627668956274926*^9}, {3.655746670268469*^9, 
+   3.6557466777385836`*^9}, {3.6760015558650703`*^9, 3.676001557163062*^9}, {
+   3.676006294125436*^9, 3.676006295585473*^9}, {3.7536416635217237`*^9, 
+   3.753641663911347*^9}, {3.754925516477665*^9, 3.754925521197358*^9}, {
+   3.754927128587829*^9, 3.754927129362215*^9}, {3.78505431130344*^9, 
+   3.785054311934387*^9}, {3.7850954410519114`*^9, 3.785095441459798*^9}, 
+   3.7850959572196007`*^9, {3.7851623831036*^9, 3.785162393009046*^9}, 
+   3.841548866553829*^9, 3.841548936463047*^9, {3.841548975801352*^9, 
+   3.841549033227416*^9}, 3.8415492047897997`*^9, {3.8415492507305717`*^9, 
+   3.841549278889674*^9}, 3.841549335281642*^9, {3.8415494389301357`*^9, 
+   3.84154944022966*^9}, {3.8415494715598173`*^9, 3.841549482058234*^9}, {
+   3.841549633349586*^9, 
+   3.84154967135072*^9}},ExpressionUUID->"fb1caf35-7f0f-4a89-8bfe-\
+446527eaf166"]
+},
+WindowSize->{1440, 855},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"14.1 para Microsoft Windows (64-bit) (July 16, 2024)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Creative"}, "NaturalColor.nb", CharacterEncoding -> 
+       "WindowsANSI"]]]}, Visible -> False, FrontEndVersion -> 
+  "14.1 para Microsoft Windows (64-bit) (July 16, 2024)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"],
+ExpressionUUID->"277f7c93-0952-41b7-b056-cde7a3f9439c"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 296, 8, 106, "Title",ExpressionUUID->"e3ee497e-0b75-4ac7-a42f-e714942a1eb2"],
+Cell[878, 32, 358, 8, 41, "Subtitle",ExpressionUUID->"013a3fe3-928c-499a-9432-bfa9b1009ca6"],
+Cell[1239, 42, 199, 4, 55, "Input",ExpressionUUID->"d8101ffd-01fd-42bb-9d88-dcf4ef61775e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1475, 51, 901, 13, 66, "Title",ExpressionUUID->"ee25f69a-cf28-4679-bfce-a586ff97fa07"],
+Cell[2379, 66, 742, 19, 129, "Input",ExpressionUUID->"d90909e6-1c5c-4854-9551-39f50c2a804e"],
+Cell[3124, 87, 501, 8, 40, "Input",ExpressionUUID->"97e5fc6f-2d9d-4066-91af-09813e171f5d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3662, 100, 1020, 14, 66, "Title",ExpressionUUID->"0b01d1cf-2784-4b4b-bce3-c22b7819618b"],
+Cell[CellGroupData[{
+Cell[4707, 118, 457, 8, 55, "Input",ExpressionUUID->"220876c1-7c6c-4f7d-8e0e-63456060d3fe"],
+Cell[5167, 128, 684, 13, 26, "Message",ExpressionUUID->"bba5ac75-8083-4a66-b3f2-9cc94b5959b3"]
+}, Open  ]]
+}, Open  ]],
+Cell[5878, 145, 1106, 18, 66, "Title",ExpressionUUID->"fb1caf35-7f0f-4a89-8bfe-446527eaf166"]
+}
+]
+*)
+
